@@ -1,0 +1,259 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(238, 108, 77, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(152, 193, 217, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.highlight {
+  color: var(--accent-orange);
+  background: linear-gradient(45deg, var(--accent-orange), #ff8a65);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 500px;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(152, 193, 217, 0.1);
+  border: 1px solid rgba(152, 193, 217, 0.2);
+  border-radius: 25px;
+  font-size: 0.9rem;
+  color: var(--accent-blue);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-actions button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(152, 193, 217, 0.1);
+  border: 1px solid rgba(152, 193, 217, 0.2);
+  border-radius: 50%;
+  color: var(--accent-blue);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--accent-orange);
+  color: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.terminal-window {
+  background: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.terminal-header {
+  background: #2d2d2d;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.terminal-buttons .btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-buttons .red {
+  background: #ff5f56;
+}
+
+.terminal-buttons .yellow {
+  background: #ffbd2e;
+}
+
+.terminal-buttons .green {
+  background: #27ca3f;
+}
+
+.terminal-title {
+  color: #8e8e93;
+  font-size: 0.9rem;
+}
+
+.terminal-body {
+  padding: 1.5rem;
+  background: #000;
+  min-height: 300px;
+  font-size: 0.9rem;
+}
+
+.terminal-line {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.prompt {
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.command {
+  color: var(--accent-orange);
+  margin-left: 0.5rem;
+}
+
+.output {
+  color: var(--accent-light);
+  margin-left: 0.5rem;
+}
+
+.typing {
+  animation: typing 3s steps(20) infinite;
+  border-right: 2px solid var(--accent-orange);
+}
+
+@keyframes typing {
+  0%, 50% {
+    border-right-color: var(--accent-orange);
+  }
+  51%, 100% {
+    border-right-color: transparent;
+  }
+}
+
+@media (max-width: 968px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 0 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+  
+  .hero-badges {
+    justify-content: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
