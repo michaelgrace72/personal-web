@@ -2,10 +2,8 @@ import React from 'react';
 import { 
   Shield, 
   Network, 
-  Server, 
   Database, 
   GitBranch, 
-  Monitor, 
   Lock, 
   Settings,
   Terminal,
