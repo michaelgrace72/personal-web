@@ -68,7 +68,7 @@ const Projects: React.FC = () => {
       ],
       links: {
         github: "#",
-        demo: "#"
+        demo: "portal.erplabiim.com"
       },
       icon: <Building2 size={24} />
     }

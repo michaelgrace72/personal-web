@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="method-info">
                   <h4>Email</h4>
-                  <p>mikha@example.com</p>
+                  <p>mikhagracia72@gmail.com</p>
                   <span>Response within 24 hours</span>
                 </div>
               </div>
@@ -62,8 +62,8 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="method-info">
                   <h4>Phone</h4>
-                  <p>+62 XXX XXX XXXX</p>
-                  <span>Available Mon-Fri 9AM-6PM</span>
+                  <p>+62 858 5396 9685</p>
+                  <span>Available Mon-Fri 8AM-6PM</span>
                 </div>
               </div>
 
@@ -82,18 +82,18 @@ const Contact: React.FC = () => {
             <div className="social-links">
               <h4>Connect With Me</h4>
               <div className="social-grid">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                <a href="https://github.com/michaelgrace72" target="_blank" rel="noopener noreferrer" className="social-link">
                   <Github size={24} />
                   <span>GitHub</span>
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                <a href="https://linkedin.com/in/mikha-gracia/" target="_blank" rel="noopener noreferrer" className="social-link">
                   <Linkedin size={24} />
                   <span>LinkedIn</span>
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
                   <Twitter size={24} />
                   <span>Twitter</span>
-                </a>
+                </a> */}
               </div>
             </div>
 
