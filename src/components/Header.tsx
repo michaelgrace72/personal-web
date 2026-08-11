@@ -27,9 +27,9 @@ const Header: React.FC = () => {
       <header className="header">
         <div className="header-container">
           <div className="logo">
-            <img 
-              src="https://media.licdn.com/dms/image/v2/C5603AQHVgysmDpjG1w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1661558100148?e=1761177600&v=beta&t=9x_N5w-vIwU0qitRBz5COirDi942338UoeMBuq6_ja8" 
-              alt="Mikha Gracia Sugiono" 
+            <img
+              src="/profile.jpg"
+              alt="Mikha Gracia Sugiono"
               className="profile-pic"
               onClick={toggleModal}
             />
@@ -61,13 +61,13 @@ const Header: React.FC = () => {
               <X size={24} />
             </button>
             <div className="modal-profile">
-              <img 
-                src="https://media.licdn.com/dms/image/v2/C5603AQHVgysmDpjG1w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1661558100148?e=1761177600&v=beta&t=9x_N5w-vIwU0qitRBz5COirDi942338UoeMBuq6_ja8" 
-                alt="Mikha Gracia Sugiono" 
+              <img
+                src="/profile.jpg"
+                alt="Mikha Gracia Sugiono"
                 className="modal-profile-pic"
               />
               <h3 className="modal-name">Mikha Gracia Sugiono</h3>
-              <p className="modal-title">Computer Science Student & DevSecOps Enthusiast</p>
+              <p className="modal-title">Backend Engineer — Go Microservices</p>
             </div>
           </div>
         </div>

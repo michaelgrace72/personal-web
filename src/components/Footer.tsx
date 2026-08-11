@@ -16,12 +16,12 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <div className="footer-brand">
               <h3>Mikha Gracia Sugiono</h3>
-              <p>DevSecOps Engineer | Network Security Enthusiast</p>
+              <p>Backend Engineer | Go Microservices & Multi-Tenant Platforms</p>
             </div>
             <div className="footer-description">
               <p>
-                Passionate about building secure, scalable systems and contributing 
-                to the cybersecurity community. Always learning, always growing.
+                Building backend services in Go and TypeScript, and the CI/CD and
+                observability that keep them shippable. Always learning, always growing.
               </p>
             </div>
           </div>
@@ -41,12 +41,12 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h4>Technologies</h4>
             <div className="footer-tech">
-              <span>Azure</span>
-              <span>Docker</span>
-              <span>Jenkins</span>
-              <span>Node.js</span>
-              <span>Python</span>
+              <span>Go</span>
               <span>TypeScript</span>
+              <span>Docker</span>
+              <span>PostgreSQL</span>
+              <span>Redis</span>
+              <span>Kong</span>
             </div>
           </div>
 

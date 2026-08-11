@@ -19,9 +19,12 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can integrate with a form service like Formspree, Netlify Forms, etc.
+    // No backend here — hand the message off to the visitor's mail client.
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `${formData.message}\n\n—\n${formData.name}\n${formData.email}`
+    );
+    window.location.href = `mailto:mikhagracia72@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -29,7 +32,7 @@ const Contact: React.FC = () => {
       <div className="contact-container">
         <div className="section-header">
           <h2>Get In Touch</h2>
-          <p>Let's collaborate on your next project or discuss cybersecurity opportunities</p>
+          <p>Open to backend and platform engineering roles, projects, and collaboration</p>
         </div>
 
         <div className="contact-content">
@@ -37,10 +40,10 @@ const Contact: React.FC = () => {
             <div className="contact-intro">
               <h3>Let's Work Together</h3>
               <p>
-                I'm always interested in new opportunities, challenging projects, 
-                and collaborations in the cybersecurity and DevOps space. Whether 
-                you have a project idea, internship opportunity, or just want to 
-                discuss the latest in security trends, I'd love to hear from you.
+                I'm interested in backend and platform engineering work — Go services,
+                multi-tenant architecture, CI/CD, and the observability around them. If you
+                have a role, a project, or just want to compare notes on microservice design,
+                I'd be glad to hear from you.
               </p>
             </div>
 
@@ -52,7 +55,7 @@ const Contact: React.FC = () => {
                 <div className="method-info">
                   <h4>Email</h4>
                   <p>mikhagracia72@gmail.com</p>
-                  <span>Response within 24 hours</span>
+                  <span>Best way to reach me</span>
                 </div>
               </div>
 
@@ -63,7 +66,7 @@ const Contact: React.FC = () => {
                 <div className="method-info">
                   <h4>Phone</h4>
                   <p>+62 858 5396 9685</p>
-                  <span>Available Mon-Fri 8AM-6PM</span>
+                  <span>WhatsApp or call</span>
                 </div>
               </div>
 
@@ -73,8 +76,8 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="method-info">
                   <h4>Location</h4>
-                  <p>Indonesia</p>
-                  <span>Open to remote collaboration</span>
+                  <p>Surabaya, Indonesia</p>
+                  <span>GMT+7 · open to remote collaboration</span>
                 </div>
               </div>
             </div>
@@ -104,10 +107,9 @@ const Contact: React.FC = () => {
                 <span>Available for new opportunities</span>
               </div>
               <div className="availability-types">
+                <span className="availability-type">Full-time (from Oct 2026)</span>
                 <span className="availability-type">Internships</span>
                 <span className="availability-type">Project Collaboration</span>
-                <span className="availability-type">Freelance Work</span>
-                <span className="availability-type">Mentorship</span>
               </div>
             </div>
           </div>
@@ -170,14 +172,15 @@ const Contact: React.FC = () => {
 
               <button type="submit" className="submit-btn">
                 <Send size={20} />
-                Send Message
+                Compose Email
               </button>
             </form>
 
             <div className="form-note">
               <p>
-                <strong>Note:</strong> I typically respond to messages within 24 hours. 
-                For urgent matters, feel free to reach out via email directly.
+                <strong>Note:</strong> this form has no backend — it opens your own mail client
+                with the message pre-filled. You can also email me directly at
+                mikhagracia72@gmail.com.
               </p>
             </div>
           </div>

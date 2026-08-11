@@ -1,14 +1,38 @@
 import React from 'react';
-import { ExternalLink, Github, Calendar, CreditCard, Lock, Building2 } from 'lucide-react';
+import { ExternalLink, Github, Calendar, CreditCard, Lock, Building2, Factory, Globe } from 'lucide-react';
 import './Projects.css';
 
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  features: string[];
+  links: { github?: string; demo?: string; portal?: string };
+  icon: React.ReactNode;
+}
+
 const Projects: React.FC = () => {
-  const projects = [
+  const projects: Project[] = [
+    {
+      title: "Cerdas ERP - Multi-Tenant Cooperative Platform",
+      description: "A multi-tenant cooperative (koperasi) management platform built as 16 services behind a Kong API gateway, applying Clean Architecture and a database-per-service pattern.",
+      technologies: ["Go", "TypeScript", "Next.js", "Kong", "PostgreSQL", "Redis", "Docker", "GitLab CI/CD"],
+      features: [
+        "16 services with database-per-service isolation",
+        "OAuth 2.0 + RFC 7662 introspection at the gateway",
+        "FIFO batch stock with weighted-average costing",
+        "Load-tested to 1,000 VUs at p95 357ms"
+      ],
+      links: {
+        demo: "https://cerdaserp.com",
+        portal: "https://koperasi.iimlab.id"
+      },
+      icon: <Building2 size={24} />
+    },
     {
       title: "VoCalendar - AI-Powered Voice Calendar App",
       description: "Built calendar app with natural language voice commands in Bahasa Indonesia. Integrated GPT for scheduling and Firebase for real-time sync.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Flutter", "Firebase", "GPT API", "Dart", "Voice Recognition"],
+      technologies: ["Flutter", "Firebase", "GPT API", "Dart"],
       features: [
         "Natural language voice commands",
         "Bahasa Indonesia support",
@@ -16,16 +40,14 @@ const Projects: React.FC = () => {
         "Real-time Firebase sync"
       ],
       links: {
-        github: "https://github.com/michaelgrace72/VoCalendar",
-        demo: "#"
+        github: "https://github.com/michaelgrace72/VoCalendar"
       },
       icon: <Calendar size={24} />
     },
     {
       title: "Credit Card Approval Prediction System",
       description: "Built ML app for real-time credit risk assessment using machine learning algorithms. Containerized system with Docker for scalable deployment.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Python", "Flask", "CatBoost", "Docker", "Machine Learning"],
+      technologies: ["Python", "Flask", "CatBoost", "Docker"],
       features: [
         "Real-time credit risk assessment",
         "CatBoost ML algorithm",
@@ -33,16 +55,14 @@ const Projects: React.FC = () => {
         "RESTful API endpoints"
       ],
       links: {
-        github: "https://github.com/michaelgrace72/CreditCardApprovalPrediction",
-        demo: "#"
+        github: "https://github.com/michaelgrace72/CreditCardApprovalPrediction"
       },
       icon: <CreditCard size={24} />
     },
     {
       title: "Secure File Encryption Application",
-      description: "Implemented AES/DES/RC4-based file encryption system with role-based access control and comprehensive activity logging for security auditing.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Python", "Flask", "PostgreSQL", "Cryptography", "JWT"],
+      description: "Implemented AES/DES/RC4-based file encryption system with role-based access control and activity audit logging.",
+      technologies: ["Python", "Flask", "PostgreSQL"],
       features: [
         "AES/DES/RC4 encryption algorithms",
         "Role-based access control",
@@ -50,27 +70,22 @@ const Projects: React.FC = () => {
         "Secure file storage"
       ],
       links: {
-        github: "https://github.com/michaelgrace72/Data-encryption-Flask",
-        demo: "#"
+        github: "https://github.com/michaelgrace72/Data-encryption-Flask"
       },
       icon: <Lock size={24} />
     },
     {
-      title: "Manufacturing ERP System (HR Module)",
-      description: "Developed secure ERP HR solution with role-based access control. Built CI/CD pipelines and implemented Docker-based microservices architecture.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Node.js", "TypeScript", "Next.js", "MariaDB", "Docker", "GitHub Actions"],
+      title: "Manufacturing ERP (Portal Access & HRM)",
+      description: "Developed the Portal Access and HRM modules of a manufacturing ERP at the MCI Laboratory, containerized as Docker-based microservices with RabbitMQ messaging.",
+      technologies: ["Node.js", "TypeScript", "Docker", "RabbitMQ", "GitHub Actions", "Jenkins", "SonarQube"],
       features: [
         "Role-based access control",
-        "REST API with error handling",
-        "CI/CD pipeline integration",
-        "Microservices architecture"
+        "REST APIs with structured error handling and logging",
+        "Docker-based microservices with RabbitMQ",
+        "CI/CD with SonarQube static analysis gates"
       ],
-      links: {
-        github: "#",
-        demo: "portal.erplabiim.com"
-      },
-      icon: <Building2 size={24} />
+      links: {},
+      icon: <Factory size={24} />
     }
   ];
 
@@ -79,7 +94,7 @@ const Projects: React.FC = () => {
       <div className="projects-container">
         <div className="section-header">
           <h2>Featured Projects</h2>
-          <p>Showcasing my software development and DevSecOps expertise</p>
+          <p>Backend systems, platform work, and side projects</p>
         </div>
 
         <div className="projects-grid">
@@ -91,16 +106,27 @@ const Projects: React.FC = () => {
                     {project.icon}
                   </div>
                 </div>
-                <div className="project-overlay">
-                  <div className="project-links">
-                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
-                      <Github size={20} />
-                    </a>
-                    <a href={project.links.demo} target="_blank" rel="noopener noreferrer" aria-label="View Demo">
-                      <ExternalLink size={20} />
-                    </a>
+                {(project.links.github || project.links.demo || project.links.portal) && (
+                  <div className="project-overlay">
+                    <div className="project-links">
+                      {project.links.github && (
+                        <a href={project.links.github} target="_blank" rel="noopener noreferrer" aria-label="View on GitHub">
+                          <Github size={20} />
+                        </a>
+                      )}
+                      {project.links.demo && (
+                        <a href={project.links.demo} target="_blank" rel="noopener noreferrer" aria-label="View live site">
+                          <ExternalLink size={20} />
+                        </a>
+                      )}
+                      {project.links.portal && (
+                        <a href={project.links.portal} target="_blank" rel="noopener noreferrer" aria-label="View tenant portal">
+                          <Globe size={20} />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               <div className="project-content">

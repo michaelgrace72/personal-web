@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Download, Shield, Network } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, Shield, Boxes } from 'lucide-react';
 import './Hero.css';
 
 const Hero: React.FC = () => {
@@ -12,30 +12,31 @@ const Hero: React.FC = () => {
               Hi, I'm <span className="highlight">Mikha Gracia Sugiono</span>
             </h1>
             <h2 className="hero-subtitle">
-              Computer Science Student & <span className="highlight">DevSecOps</span> Enthusiast
+              Backend Engineer — <span className="highlight">Go Microservices</span> & Multi-Tenant Platforms
             </h2>
             <p className="hero-description">
-              Passionate about cybersecurity, infrastructure automation, and building secure, 
-              scalable systems. Specializing in DevSecOps practices with hands-on experience 
-              in network security, containerization, and CI/CD pipelines.
+              I build backend services in Go and TypeScript, with a focus on multi-tenant
+              platform architecture. Most recently I helped ship a 16-service ERP platform to
+              production, working across GitLab CI/CD, Docker, and Prometheus/Grafana/Loki
+              observability, on a security foundation of OAuth 2.0 and role-based access control.
             </p>
-            
+
             <div className="hero-badges">
               <div className="badge">
-                <Shield size={20} />
-                <span>Security Focused</span>
+                <Boxes size={20} />
+                <span>Go Microservices</span>
               </div>
               <div className="badge">
-                <Network size={20} />
-                <span>Network Expert</span>
+                <Shield size={20} />
+                <span>ISC2 CC Certified</span>
               </div>
             </div>
-            
+
             <div className="hero-actions">
-              <button className="btn-primary">
+              <a className="btn-primary" href="/cv-mikha-gracia.pdf" download>
                 <Download size={20} />
                 Download CV
-              </button>
+              </a>
               <button className="btn-secondary" onClick={() => {
                 const element = document.getElementById('contact');
                 element?.scrollIntoView({ behavior: 'smooth' });
@@ -76,21 +77,24 @@ const Hero: React.FC = () => {
                   <span className="command"> whoami</span>
                 </div>
                 <div className="terminal-line">
-                  <span className="output">DevSecOps Engineer</span>
+                  <span className="output">Backend Engineer — Go microservices</span>
                 </div>
                 <div className="terminal-line">
                   <span className="prompt">└─$</span>
-                  <span className="command"> cat skills.txt</span>
+                  <span className="command"> cat stack.txt</span>
                 </div>
                 <div className="terminal-line">
-                  <span className="output">Bash | Linux | Docker | Jenkins | Web Dev</span>
+                  <span className="output">Go | TypeScript | PostgreSQL | Redis | Docker</span>
                 </div>
                 <div className="terminal-line">
-                  <span className="output">GitLab CI/CD | Network Security | Forensics</span>
+                  <span className="output">Kong Gateway | GitLab CI/CD | Prometheus + Grafana</span>
                 </div>
                 <div className="terminal-line">
                   <span className="prompt">└─$</span>
-                  <span className="command typing"> nmap -sV localhost</span>
+                  <span className="command typing"> k6 run load-test.js</span>
+                </div>
+                <div className="terminal-line">
+                  <span className="output">1,000 VUs · p95 357ms · 0.02% errors</span>
                 </div>
               </div>
             </div>

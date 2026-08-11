@@ -16,11 +16,12 @@ const About: React.FC = () => {
             <div className="about-intro">
               <User className="section-icon" size={32} />
               <div>
-                <h3>DevSecOps Engineer & Computer Science Student</h3>
+                <h3>Backend Engineer & Final-Year Computer Science Student</h3>
                 <p>
-                  I'm a passionate DevSecOps Engineer and Computer Science student at Institut Teknologi Sepuluh Nopember (ITS) 
-                  with extensive experience in CI/CD, containerization, and security implementation. Currently in my 6th semester 
-                  while working on ERP system development, infrastructure automation, and secure software development practices.
+                  I'm a backend engineer and final-year Informatics student at Institut Teknologi
+                  Sepuluh Nopember (ITS). At the MCI Laboratory I work on Cerdas ERP, a multi-tenant
+                  cooperative management platform, building Go services behind a Kong API gateway and
+                  the CI/CD and observability that keep them shippable.
                 </p>
               </div>
             </div>
@@ -31,7 +32,7 @@ const About: React.FC = () => {
                 <div>
                   <h4>Education</h4>
                   <p>Bachelor of Computer Science (Informatics) - ITS</p>
-                  <span>6th Semester | ISC2 Certified in Cybersecurity (CC)</span>
+                  <span>GPA 3.55 / 4.00 | Expected graduation Oct 2026 | ISC2 CC</span>
                 </div>
               </div>
 
@@ -48,19 +49,19 @@ const About: React.FC = () => {
                 <Calendar size={24} />
                 <div>
                   <h4>Experience</h4>
-                  <p>Software Engineer at Smart Indicator Economy, ITS Lab</p>
-                  <span>Laboratory Administrator & Technology Mentor</span>
+                  <p>Backend Engineer at Manajemen Cerdas Informasi (MCI) Laboratory, ITS</p>
+                  <span>Previously DevOps-focused Software Engineer & Laboratory Administrator</span>
                 </div>
               </div>
             </div>
 
             <div className="about-philosophy">
-              <h3>My Philosophy</h3>
+              <h3>How I Work</h3>
               <blockquote>
-                "Security is not a product, but a process. I believe in building secure, 
-                scalable systems from the ground up, integrating security practices and 
-                automation into every stage of the development lifecycle to create robust 
-                and maintainable solutions."
+                I try to build services that stay independently deployable and observable — clear
+                boundaries, no reaching into another service's database, and enough logging and
+                metrics to answer questions in production. I'd rather measure a change than assume
+                it helped, so I load-test before claiming a system is fast.
               </blockquote>
             </div>
           </div>
@@ -72,36 +73,36 @@ const About: React.FC = () => {
                 <div className="tech-category">
                   <h4>Programming Languages</h4>
                   <div className="tech-items">
+                    <span className="tech-item">Go</span>
+                    <span className="tech-item">TypeScript</span>
                     <span className="tech-item">Python</span>
-                    <span className="tech-item">JavaScript/TypeScript</span>
-                    <span className="tech-item">Java</span>
                   </div>
                 </div>
 
                 <div className="tech-category">
-                  <h4>DevSecOps & Cloud</h4>
+                  <h4>Platform & CI/CD</h4>
                   <div className="tech-items">
-                    <span className="tech-item">Azure</span>
                     <span className="tech-item">Docker</span>
-                    <span className="tech-item">GitHub Actions</span>
+                    <span className="tech-item">GitLab CI/CD</span>
+                    <span className="tech-item">Kong API Gateway</span>
                   </div>
                 </div>
 
                 <div className="tech-category">
-                  <h4>Backend & Databases</h4>
+                  <h4>Data & Messaging</h4>
+                  <div className="tech-items">
+                    <span className="tech-item">PostgreSQL</span>
+                    <span className="tech-item">Redis</span>
+                    <span className="tech-item">RabbitMQ</span>
+                  </div>
+                </div>
+
+                <div className="tech-category">
+                  <h4>Frameworks & Observability</h4>
                   <div className="tech-items">
                     <span className="tech-item">Node.js</span>
-                    <span className="tech-item">PostgreSQL</span>
-                    <span className="tech-item">MariaDB</span>
-                  </div>
-                </div>
-
-                <div className="tech-category">
-                  <h4>Frameworks & Tools</h4>
-                  <div className="tech-items">
-                    <span className="tech-item">Flutter</span>
                     <span className="tech-item">Next.js</span>
-                    <span className="tech-item">Flask</span>
+                    <span className="tech-item">Prometheus + Grafana</span>
                   </div>
                 </div>
               </div>

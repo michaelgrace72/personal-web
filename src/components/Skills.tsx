@@ -1,92 +1,94 @@
 import React from 'react';
-import { 
-  Shield, 
-  Network, 
-  Database, 
-  GitBranch, 
-  Lock, 
-  Settings,
-  Terminal,
-  Globe,
-  Container,
-  Activity
+import {
+  Code2,
+  Layers,
+  Database,
+  GitBranch,
+  Lock,
+  Server,
+  Activity,
+  Boxes,
+  Gauge,
+  ShieldCheck
 } from 'lucide-react';
 import './Skills.css';
 
 const Skills: React.FC = () => {
   const skillCategories = [
     {
-      title: "DevSecOps & Security",
-      icon: <Shield size={32} />,
+      title: "Languages",
+      icon: <Code2 size={32} />,
+      skills: ["Go", "Python", "TypeScript/JavaScript", "Java", "C/C++", "Dart", "SQL"]
+    },
+    {
+      title: "Architecture & Backend",
+      icon: <Layers size={32} />,
       skills: [
-        { name: "Security Auditing", level: 80 },
-        { name: "Security Monitoring", level: 80 }
+        "Microservices",
+        "Clean Architecture",
+        "Hexagonal Architecture",
+        "REST APIs",
+        "Database-per-Service",
+        "Multi-Tenancy",
+        "Node.js",
+        "Flask"
       ]
     },
     {
-      title: "Networking & Infrastructure",
-      icon: <Network size={32} />,
+      title: "API Gateway & Security",
+      icon: <Lock size={32} />,
       skills: [
-        { name: "Forward Proxy", level: 90 },
-        { name: "Reverse Proxy", level: 88 },
-        { name: "Load Balancer", level: 70 },
-        { name: "Firewall Configuration", level: 70 }
+        "Kong API Gateway",
+        "OAuth 2.0",
+        "Token Introspection (RFC 7662)",
+        "Role-Based Access Control",
+        "Data Encryption (AES/DES/RC4)"
       ]
     },
     {
-      title: "System Administration",
-      icon: <Terminal size={32} />,
-      skills: [
-        { name: "Bash Scripting", level: 85 },
-        { name: "Linux Administration", level: 90 },
-        { name: "Unix Operations", level: 80 },
-        { name: "Kali Linux", level: 90 }
-      ]
-    },
-    {
-      title: "DevOps & CI/CD",
+      title: "Containers & CI/CD",
       icon: <GitBranch size={32} />,
       skills: [
-        { name: "Jenkins", level: 70 },
-        { name: "GitLab CI/CD", level: 80 },
-        { name: "Docker", level: 90 },
-        { name: "Application Monitoring", level: 80 }
+        "Docker",
+        "Docker Compose",
+        "GitLab CI/CD",
+        "GitHub Actions",
+        "Jenkins",
+        "SonarQube",
+        "Kubernetes (design-level)"
       ]
     },
     {
-      title: "Web Services",
-      icon: <Globe size={32} />,
+      title: "Observability & Testing",
+      icon: <Activity size={32} />,
       skills: [
-        { name: "Web Server Management", level: 80 },
-        { name: "Caching Server", level: 70 },
-        { name: "Nginx", level: 90 },
-        { name: "Apache", level: 80 }
+        "Prometheus",
+        "Grafana",
+        "Grafana Loki",
+        "cAdvisor",
+        "Node Exporter",
+        "k6 Load Testing"
       ]
     },
     {
-      title: "Version Control & Hosting",
+      title: "Databases & Messaging",
       icon: <Database size={32} />,
+      skills: ["PostgreSQL", "MySQL", "Redis", "MongoDB", "RabbitMQ"]
+    },
+    {
+      title: "Infrastructure & Systems",
+      icon: <Server size={32} />,
       skills: [
-        { name: "Git", level: 92 },
-        { name: "GitHub", level: 90 },
-        { name: "GitLab", level: 70 },
-        { name: "Container Orchestration", level: 70 }
+        "Linux",
+        "Bare-Metal Server Provisioning",
+        "GPU Compute Infrastructure (NVIDIA RTX/Quadro)",
+        "Network Configuration",
+        "Azure",
+        "Terraform (personal projects)",
+        "Git",
+        "Postman"
       ]
     }
-  ];
-
-  const tools = [
-    { name: "Kali Linux", category: "OS" },
-    { name: "Docker", category: "Container" },
-    { name: "Jenkins", category: "CI/CD" },
-    { name: "Nmap", category: "Security" },
-    { name: "Wireshark", category: "Network" },
-    { name: "Metasploit", category: "Security" },
-    { name: "GitLab", category: "VCS" },
-    { name: "Nginx", category: "Web Server" },
-    { name: "iptables", category: "Firewall" },
-    { name: "Prometheus", category: "Monitoring" },
-    { name: "Grafana", category: "Monitoring" },
   ];
 
   return (
@@ -94,7 +96,7 @@ const Skills: React.FC = () => {
       <div className="skills-container">
         <div className="section-header">
           <h2>Skills & Expertise</h2>
-          <p>My technical competencies and areas of specialization</p>
+          <p>Grouped as they appear on my CV</p>
         </div>
 
         <div className="skills-grid">
@@ -106,56 +108,33 @@ const Skills: React.FC = () => {
                 </div>
                 <h3>{category.title}</h3>
               </div>
-              <div className="skills-list">
+              <div className="skill-tags">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="skill-item">
-                    <div className="skill-info">
-                      <span className="skill-name">{skill.name}</span>
-                      <span className="skill-percentage">{skill.level}%</span>
-                    </div>
-                    <div className="skill-bar">
-                      <div 
-                        className="skill-progress" 
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
+                  <span key={skillIndex} className="skill-tag">{skill}</span>
                 ))}
               </div>
             </div>
           ))}
         </div>
 
-        <div className="tools-section">
-          <h3>Tools & Technologies</h3>
-          <div className="tools-grid">
-            {tools.map((tool, index) => (
-              <div key={index} className="tool-item">
-                <span className="tool-name">{tool.name}</span>
-                <span className="tool-category">{tool.category}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
         <div className="certifications-section">
           <h3>Areas of Focus</h3>
           <div className="focus-areas">
             <div className="focus-item">
-              <Container size={24} />
-              <span>Containerization & Orchestration</span>
+              <Boxes size={24} />
+              <span>Go Microservices & Clean Architecture</span>
             </div>
             <div className="focus-item">
-              <Activity size={24} />
-              <span>Network Security & Monitoring</span>
+              <ShieldCheck size={24} />
+              <span>Multi-Tenant Platform Design</span>
             </div>
             <div className="focus-item">
-              <Lock size={24} />
-              <span>Secure Development Practices</span>
+              <GitBranch size={24} />
+              <span>CI/CD & Containerization</span>
             </div>
             <div className="focus-item">
-              <Settings size={24} />
-              <span>Infrastructure Automation</span>
+              <Gauge size={24} />
+              <span>Observability & Load Testing</span>
             </div>
           </div>
         </div>

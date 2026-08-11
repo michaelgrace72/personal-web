@@ -3,23 +3,11 @@
   display: flex;
   align-items: center;
   padding: 0 2rem;
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+  background: var(--background);
   position: relative;
   overflow: hidden;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(238, 108, 77, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(152, 193, 217, 0.1) 0%, transparent 50%);
-  z-index: 1;
-}
 
 .hero-container {
   max-width: 1200px;
@@ -58,10 +46,6 @@
 
 .highlight {
   color: var(--accent-orange);
-  background: linear-gradient(45deg, var(--accent-orange), #ff8a65);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .hero-description {
@@ -82,8 +66,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: rgba(152, 193, 217, 0.1);
-  border: 1px solid rgba(152, 193, 217, 0.2);
+  background: rgba(142, 202, 230, 0.1);
+  border: 1px solid rgba(142, 202, 230, 0.2);
   border-radius: 25px;
   font-size: 0.9rem;
   color: var(--accent-blue);
@@ -95,32 +79,33 @@
   flex-wrap: wrap;
 }
 
-.hero-actions button {
+.hero-actions button,
+.hero-actions .btn-primary {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.social-links {
+.hero .social-links {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
 }
 
-.social-links a {
+.hero .social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50px;
   height: 50px;
-  background: rgba(152, 193, 217, 0.1);
-  border: 1px solid rgba(152, 193, 217, 0.2);
+  background: rgba(142, 202, 230, 0.1);
+  border: 1px solid rgba(142, 202, 230, 0.2);
   border-radius: 50%;
   color: var(--accent-blue);
   transition: all 0.3s ease;
 }
 
-.social-links a:hover {
+.hero .social-links a:hover {
   background: var(--accent-orange);
   color: var(--primary-dark);
   transform: translateY(-3px);
@@ -192,28 +177,28 @@
 }
 
 .prompt {
-  color: var(--accent-blue);
+  color: #98c1d9;
   font-weight: 600;
 }
 
 .command {
-  color: var(--accent-orange);
+  color: #ee6c4d;
   margin-left: 0.5rem;
 }
 
 .output {
-  color: var(--accent-light);
+  color: #ffffff;
   margin-left: 0.5rem;
 }
 
 .typing {
   animation: typing 3s steps(20) infinite;
-  border-right: 2px solid var(--accent-orange);
+  border-right: 2px solid #ee6c4d;
 }
 
 @keyframes typing {
   0%, 50% {
-    border-right-color: var(--accent-orange);
+    border-right-color: #ee6c4d;
   }
   51%, 100% {
     border-right-color: transparent;
@@ -221,6 +206,12 @@
 }
 
 @media (max-width: 968px) {
+  /* Hero content is taller than the viewport here, so it no longer centres
+     clear of the fixed header — reserve room for it. */
+  .hero {
+    padding: 7rem 2rem 4rem;
+  }
+
   .hero-content {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -238,7 +229,7 @@
 
 @media (max-width: 640px) {
   .hero {
-    padding: 0 1rem;
+    padding: 7rem 1rem 4rem;
   }
   
   .hero-title {
@@ -253,7 +244,7 @@
     justify-content: center;
   }
   
-  .social-links {
+  .hero .social-links {
     justify-content: center;
   }
 }
