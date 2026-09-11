@@ -61,26 +61,27 @@ const Hero: React.FC = () => {
           <div className="hero-visual">
             <div className="terminal-window">
               <div className="terminal-header">
-                <div className="terminal-buttons">
-                  <span className="btn red"></span>
-                  <span className="btn yellow"></span>
-                  <span className="btn green"></span>
-                </div>
-                <span className="terminal-title">mikha@kali:~$</span>
+                <span className="terminal-title">mikha@kali: ~</span>
               </div>
               <div className="terminal-body">
                 <div className="terminal-line">
-                  <span className="prompt">┌──(mikha㉿kali)-[~]</span>
+                  <span className="ps-frame">┌──(</span>
+                  <span className="ps-user">mikha㉿kali</span>
+                  <span className="ps-frame">)-[</span>
+                  <span className="ps-path">~</span>
+                  <span className="ps-frame">]</span>
                 </div>
                 <div className="terminal-line">
-                  <span className="prompt">└─$</span>
+                  <span className="ps-frame">└─</span>
+                  <span className="ps-sym">$</span>
                   <span className="command"> whoami</span>
                 </div>
                 <div className="terminal-line">
                   <span className="output">Backend Engineer — Go microservices</span>
                 </div>
                 <div className="terminal-line">
-                  <span className="prompt">└─$</span>
+                  <span className="ps-frame">└─</span>
+                  <span className="ps-sym">$</span>
                   <span className="command"> cat stack.txt</span>
                 </div>
                 <div className="terminal-line">
@@ -90,7 +91,8 @@ const Hero: React.FC = () => {
                   <span className="output">Kong Gateway | GitLab CI/CD | Prometheus + Grafana</span>
                 </div>
                 <div className="terminal-line">
-                  <span className="prompt">└─$</span>
+                  <span className="ps-frame">└─</span>
+                  <span className="ps-sym">$</span>
                   <span className="command typing"> k6 run load-test.js</span>
                 </div>
                 <div className="terminal-line">

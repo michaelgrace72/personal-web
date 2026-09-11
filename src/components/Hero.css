@@ -44,7 +44,11 @@
   margin: 0;
 }
 
-.highlight {
+.hero-title .highlight {
+  color: var(--accent-blue);
+}
+
+.hero-subtitle .highlight {
   color: var(--accent-orange);
 }
 
@@ -66,8 +70,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: rgba(142, 202, 230, 0.1);
-  border: 1px solid rgba(142, 202, 230, 0.2);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 25px;
   font-size: 0.9rem;
   color: var(--accent-blue);
@@ -98,17 +102,16 @@
   justify-content: center;
   width: 50px;
   height: 50px;
-  background: rgba(142, 202, 230, 0.1);
-  border: 1px solid rgba(142, 202, 230, 0.2);
+  background: var(--background-alt);
+  border: 1px solid var(--border);
   border-radius: 50%;
   color: var(--accent-blue);
   transition: all 0.3s ease;
 }
 
 .hero .social-links a:hover {
-  background: var(--accent-orange);
-  color: var(--primary-dark);
-  transform: translateY(-3px);
+  background: var(--accent-blue);
+  color: var(--on-accent);
 }
 
 .hero-visual {
@@ -118,87 +121,74 @@
 }
 
 .terminal-window {
-  background: #1a1a1a;
-  border-radius: 10px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: #000000;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(17, 34, 64, 0.15);
   overflow: hidden;
   width: 100%;
   max-width: 500px;
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-family: 'JetBrains Mono', 'Fira Code', 'DejaVu Sans Mono', monospace;
 }
 
+/* Flat title strip, like the Kali terminal — no traffic lights */
 .terminal-header {
-  background: #2d2d2d;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.terminal-buttons {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.terminal-buttons .btn {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-.terminal-buttons .red {
-  background: #ff5f56;
-}
-
-.terminal-buttons .yellow {
-  background: #ffbd2e;
-}
-
-.terminal-buttons .green {
-  background: #27ca3f;
+  background: #1c1c1c;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 0.5rem 1rem;
+  text-align: center;
 }
 
 .terminal-title {
-  color: #8e8e93;
-  font-size: 0.9rem;
+  color: #b8b8b8;
+  font-size: 0.85rem;
 }
 
 .terminal-body {
-  padding: 1.5rem;
-  background: #000;
+  padding: 1.25rem;
+  background: #000000;
   min-height: 300px;
   font-size: 0.9rem;
+  color: #d0cfcc;
 }
 
 .terminal-line {
-  margin-bottom: 0.5rem;
-  display: flex;
-  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
 }
 
-.prompt {
-  color: #98c1d9;
-  font-weight: 600;
+/* Kali's default prompt: green frame, bold blue user and $, bold white path */
+.ps-frame {
+  color: #33da7a;
 }
 
-.command {
-  color: #ee6c4d;
-  margin-left: 0.5rem;
+.ps-user {
+  color: #2a84d2;
+  font-weight: 700;
 }
 
-.output {
+.ps-path {
   color: #ffffff;
-  margin-left: 0.5rem;
+  font-weight: 700;
+}
+
+.ps-sym {
+  color: #2a84d2;
+  font-weight: 700;
+}
+
+.command,
+.output {
+  color: #d0cfcc;
 }
 
 .typing {
   animation: typing 3s steps(20) infinite;
-  border-right: 2px solid #ee6c4d;
+  border-right: 2px solid #d0cfcc;
 }
 
 @keyframes typing {
   0%, 50% {
-    border-right-color: #ee6c4d;
+    border-right-color: #d0cfcc;
   }
   51%, 100% {
     border-right-color: transparent;

@@ -13,24 +13,6 @@
   z-index: 2;
 }
 
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.section-header h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-}
-
-.section-header p {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -62,24 +44,23 @@
   gap: 1rem;
   margin-bottom: 2rem;
   padding: 1.5rem;
-  background: rgba(2, 48, 71, 0.3);
-  border: 1px solid rgba(142, 202, 230, 0.1);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 .contact-method:hover {
-  background: rgba(142, 202, 230, 0.1);
-  border-color: var(--accent-orange);
-  transform: translateY(-2px);
+  background: rgba(17, 34, 64, 0.04);
+  border-color: var(--accent-blue);
 }
 
 .method-icon {
-  color: var(--accent-orange);
-  background: rgba(251, 133, 0, 0.1);
+  color: var(--accent-blue);
+  background: rgba(17, 34, 64, 0.05);
   padding: 0.75rem;
   border-radius: 10px;
-  border: 1px solid rgba(251, 133, 0, 0.2);
+  border: 1px solid rgba(17, 34, 64, 0.14);
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -123,8 +104,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 1rem;
-  background: rgba(142, 202, 230, 0.1);
-  border: 1px solid rgba(142, 202, 230, 0.2);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 10px;
   color: var(--accent-blue);
   text-decoration: none;
@@ -132,9 +113,8 @@
 }
 
 .social-link:hover {
-  background: var(--accent-orange);
-  color: var(--primary-dark);
-  transform: translateY(-3px);
+  background: var(--accent-blue);
+  color: var(--on-accent);
 }
 
 .social-link span {
@@ -162,20 +142,7 @@
 }
 
 .status-indicator.available {
-  background: var(--amber);
-  box-shadow: 0 0 10px rgba(39, 202, 63, 0.5);
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(39, 202, 63, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(39, 202, 63, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(39, 202, 63, 0);
-  }
+  background: var(--accent-orange);
 }
 
 .availability-status span {
@@ -190,17 +157,17 @@
 }
 
 .availability-type {
-  background: rgba(251, 133, 0, 0.1);
-  color: var(--accent-orange);
+  background: rgba(17, 34, 64, 0.05);
+  color: var(--accent-blue);
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
   font-size: 0.8rem;
-  border: 1px solid rgba(251, 133, 0, 0.2);
+  border: 1px solid rgba(17, 34, 64, 0.14);
 }
 
 .contact-form {
-  background: rgba(241, 248, 251, 0.03);
-  border: 1px solid rgba(241, 248, 251, 0.1);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 15px;
   padding: 2rem;
 }
@@ -227,8 +194,8 @@
 .form-group textarea {
   width: 100%;
   padding: 0.75rem 1rem;
-  background: rgba(2, 48, 71, 0.5);
-  border: 1px solid rgba(142, 202, 230, 0.2);
+  background: var(--background-alt);
+  border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text-primary);
   font-family: inherit;
@@ -239,8 +206,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--accent-orange);
-  box-shadow: 0 0 0 2px rgba(251, 133, 0, 0.2);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 2px rgba(17, 34, 64, 0.14);
 }
 
 .form-group input::placeholder,
@@ -260,9 +227,9 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: var(--accent-orange);
-  color: var(--primary-dark);
-  border: none;
+  background: var(--accent-blue);
+  color: var(--on-accent);
+  border: 2px solid var(--accent-blue);
   padding: 1rem 2rem;
   border-radius: 8px;
   font-size: 1rem;
@@ -273,16 +240,15 @@
 
 .submit-btn:hover {
   background: transparent;
-  color: var(--accent-orange);
-  border: 2px solid var(--accent-orange);
-  transform: translateY(-2px);
+  color: var(--accent-blue);
+  border: 2px solid var(--accent-blue);
 }
 
 .form-note {
   margin-top: 1.5rem;
   padding: 1rem;
-  background: rgba(142, 202, 230, 0.1);
-  border: 1px solid rgba(142, 202, 230, 0.2);
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 8px;
 }
 

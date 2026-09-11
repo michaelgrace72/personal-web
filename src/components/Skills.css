@@ -13,22 +13,6 @@
   z-index: 2;
 }
 
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.section-header h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-}
-
-.section-header p {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-}
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -37,17 +21,16 @@
 }
 
 .skill-category {
-  background: rgba(241, 248, 251, 0.03);
-  border: 1px solid rgba(241, 248, 251, 0.1);
+  background: var(--background-alt);
+  border: 1px solid var(--border);
   border-radius: 15px;
   padding: 2rem;
   transition: all 0.3s ease;
 }
 
 .skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  border-color: var(--accent-orange);
+  box-shadow: 0 15px 35px rgba(17, 34, 64, 0.08);
+  border-color: var(--accent-blue);
 }
 
 .category-header {
@@ -58,11 +41,11 @@
 }
 
 .category-icon {
-  color: var(--accent-orange);
-  background: rgba(251, 133, 0, 0.1);
+  color: var(--accent-blue);
+  background: rgba(17, 34, 64, 0.05);
   padding: 0.75rem;
   border-radius: 10px;
-  border: 1px solid rgba(251, 133, 0, 0.2);
+  border: 1px solid rgba(17, 34, 64, 0.14);
 }
 
 .category-header h3 {
@@ -77,19 +60,18 @@
 }
 
 .skill-tag {
-  background: rgba(142, 202, 230, 0.1);
+  background: var(--surface);
   color: var(--accent-blue);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
-  border: 1px solid rgba(142, 202, 230, 0.2);
+  border: 1px solid var(--border);
   transition: all 0.3s ease;
 }
 
 .skill-tag:hover {
   background: var(--accent-blue);
-  color: var(--primary-dark);
-  transform: translateY(-2px);
+  color: var(--on-accent);
 }
 
 .certifications-section h3 {
@@ -109,20 +91,19 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: rgba(251, 133, 0, 0.1);
-  border: 1px solid rgba(251, 133, 0, 0.2);
+  background: rgba(17, 34, 64, 0.05);
+  border: 1px solid rgba(17, 34, 64, 0.14);
   border-radius: 10px;
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
 
 .focus-item:hover {
-  background: rgba(251, 133, 0, 0.15);
-  transform: translateY(-2px);
+  background: rgba(17, 34, 64, 0.08);
 }
 
 .focus-item svg {
-  color: var(--accent-orange);
+  color: var(--accent-blue);
   flex-shrink: 0;
 }
 

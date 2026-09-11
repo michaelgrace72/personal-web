@@ -3,32 +3,24 @@
   line-height: 1.6;
   font-weight: 400;
 
-  /* Color Palette */
-  --deep-space: #023047;       /* Deep Space Blue — the one background colour */
-  --blue-green: #219ebc;       /* Blue Green */
-  --sky-blue: #8ecae6;         /* Sky Blue (Light) */
-  --amber: #ffb703;            /* Amber Flame */
-  --tiger: #fb8500;            /* Tiger Orange */
+  /* Palette: black on white, navy for structure, orange as the single accent */
+  --navy: #112240;
+  --orange: #f98125;
 
-  /* Derived tones — flat steps up from the background, never gradients */
-  --surface-1: #04405e;        /* cards */
-  --surface-2: #055074;        /* hover / raised */
-  --ink: #011c2b;              /* deeper than the background: terminal, footer */
+  --background: #ffffff;
+  --background-alt: #f6f7f9;   /* alternating band */
+  --surface: #ffffff;          /* cards */
+  --surface-alt: #eef0f4;      /* raised / placeholder fills */
 
-  --primary-dark: var(--deep-space);
-  --primary-blue: var(--surface-1);
-  --accent-blue: var(--sky-blue);
-  --accent-light: #f1f8fb;
-  --accent-orange: var(--tiger);
+  --text-primary: #111418;
+  --text-secondary: #5b6572;
 
-  /* Semantic colors */
-  --background: var(--deep-space);
-  --background-alt: #011e2e;   /* alternating band — deeper, so cards keep their edge */
-  --section-rule: rgba(142, 202, 230, 0.14);
-  --surface: var(--surface-1);
-  --text-primary: var(--accent-light);
-  --text-secondary: var(--sky-blue);
-  --accent: var(--tiger);
+  --border: #e3e6ea;
+  --section-rule: var(--border);
+
+  --accent-blue: var(--navy);
+  --accent-orange: var(--orange);
+  --on-accent: #ffffff;        /* text sitting on a navy or orange fill */
 
   color: var(--text-primary);
   background-color: var(--background);
@@ -81,77 +73,96 @@ h3 {
   font-size: 2rem;
 }
 
+/* Shared by every section — About, Skills, Projects, Experience, Contact */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 button,
 a.btn-primary,
 a.btn-secondary {
-  border-radius: 8px;
-  border: 2px solid var(--accent-orange);
+  border-radius: 6px;
+  border: 2px solid var(--accent-blue);
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
   font-family: inherit;
   background-color: transparent;
-  color: var(--accent-orange);
+  color: var(--accent-blue);
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
-button:hover,
-a.btn-primary:hover,
-a.btn-secondary:hover {
-  background-color: var(--accent-orange);
-  color: var(--primary-dark);
-  transform: translateY(-2px);
-}
-
-button:focus,
 button:focus-visible,
 a.btn-primary:focus-visible,
 a.btn-secondary:focus-visible {
-  outline: 2px solid var(--accent-blue);
+  outline: 2px solid var(--accent-orange);
   outline-offset: 2px;
 }
 
-.btn-primary {
-  background-color: var(--accent-orange);
-  color: var(--primary-dark);
+a.btn-primary,
+button.btn-primary {
+  background-color: var(--accent-blue);
+  color: var(--on-accent);
 }
 
-.btn-primary:hover {
+a.btn-primary:hover,
+button.btn-primary:hover {
   background-color: transparent;
-  color: var(--accent-orange);
-}
-
-.btn-secondary {
-  border-color: var(--accent-blue);
   color: var(--accent-blue);
 }
 
-.btn-secondary:hover {
+a.btn-secondary:hover,
+button.btn-secondary:hover {
   background-color: var(--accent-blue);
-  color: var(--primary-dark);
+  color: var(--on-accent);
 }
 
-/* Smooth scrolling */
+/* Status dot — used by Contact and Footer */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(249, 129, 37, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(249, 129, 37, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(249, 129, 37, 0);
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--primary-dark);
+  background: var(--background-alt);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-orange);
+  background: var(--accent-blue);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-blue);
+  background: var(--accent-orange);
 }

@@ -28,7 +28,7 @@
 
 .footer-section h3 {
   font-size: 1.5rem;
-  color: var(--accent-orange);
+  color: var(--accent-blue);
 }
 
 .footer-section h4 {
@@ -65,7 +65,7 @@
 }
 
 .footer-links a:hover {
-  color: var(--accent-orange);
+  color: var(--accent-blue);
 }
 
 .footer-tech {
@@ -75,12 +75,12 @@
 }
 
 .footer-tech span {
-  background: rgba(142, 202, 230, 0.1);
+  background: var(--surface);
   color: var(--accent-blue);
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
   font-size: 0.8rem;
-  border: 1px solid rgba(142, 202, 230, 0.2);
+  border: 1px solid var(--border);
 }
 
 .footer-social {
@@ -95,17 +95,16 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: rgba(142, 202, 230, 0.1);
-  border: 1px solid rgba(142, 202, 230, 0.2);
+  background: var(--background-alt);
+  border: 1px solid var(--border);
   border-radius: 50%;
   color: var(--accent-blue);
   transition: all 0.3s ease;
 }
 
 .footer-social a:hover {
-  background: var(--accent-orange);
-  color: var(--primary-dark);
-  transform: translateY(-2px);
+  background: var(--accent-blue);
+  color: var(--on-accent);
 }
 
 .footer-contact-info p {
@@ -119,7 +118,7 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 2rem;
-  border-top: 1px solid rgba(142, 202, 230, 0.1);
+  border-top: 1px solid var(--border);
 }
 
 .footer-copyright p {
@@ -131,7 +130,7 @@
 }
 
 .heart {
-  color: var(--tiger);
+  color: var(--accent-orange);
   animation: heartbeat 1.5s ease-in-out infinite;
 }
 
@@ -155,19 +154,20 @@
 .status-dot {
   width: 8px;
   height: 8px;
-  background: var(--amber);
+  background: var(--accent-orange);
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
 
 .scroll-to-top {
+  padding: 0;
   position: absolute;
   top: -25px;
   right: 2rem;
   width: 50px;
   height: 50px;
-  background: var(--accent-orange);
-  color: var(--primary-dark);
+  background: var(--accent-blue);
+  color: var(--on-accent);
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -175,13 +175,12 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(251, 133, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(17, 34, 64, 0.14);
 }
 
 .scroll-to-top:hover {
   background: var(--accent-blue);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(142, 202, 230, 0.4);
+  box-shadow: 0 6px 20px var(--border);
 }
 
 @media (max-width: 968px) {

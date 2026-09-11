@@ -93,10 +93,6 @@ const Contact: React.FC = () => {
                   <Linkedin size={24} />
                   <span>LinkedIn</span>
                 </a>
-                {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
-                  <Twitter size={24} />
-                  <span>Twitter</span>
-                </a> */}
               </div>
             </div>
 
