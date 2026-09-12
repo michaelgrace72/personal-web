@@ -29,7 +29,7 @@
 }
 
 .skill-category:hover {
-  box-shadow: 0 15px 35px rgba(17, 34, 64, 0.08);
+  box-shadow: 0 15px 35px var(--shadow);
   border-color: var(--accent-blue);
 }
 
@@ -42,10 +42,10 @@
 
 .category-icon {
   color: var(--accent-blue);
-  background: rgba(17, 34, 64, 0.05);
+  background: var(--tint);
   padding: 0.75rem;
   border-radius: 10px;
-  border: 1px solid rgba(17, 34, 64, 0.14);
+  border: 1px solid var(--tint-border);
 }
 
 .category-header h3 {
@@ -91,15 +91,15 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: rgba(17, 34, 64, 0.05);
-  border: 1px solid rgba(17, 34, 64, 0.14);
+  background: var(--tint);
+  border: 1px solid var(--tint-border);
   border-radius: 10px;
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
 
 .focus-item:hover {
-  background: rgba(17, 34, 64, 0.08);
+  background: var(--tint-strong);
 }
 
 .focus-item svg {

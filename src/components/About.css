@@ -64,7 +64,7 @@
 }
 
 .detail-item:hover {
-  box-shadow: 0 8px 25px rgba(17, 34, 64, 0.08);
+  box-shadow: 0 8px 25px var(--shadow);
   border-color: var(--accent-blue);
 }
 
@@ -93,7 +93,7 @@
   padding: 2rem;
   background: var(--surface);
   border-radius: 15px;
-  border: 1px solid rgba(17, 34, 64, 0.14);
+  border: 1px solid var(--tint-border);
 }
 
 .about-philosophy h3 {

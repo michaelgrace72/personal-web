@@ -31,7 +31,7 @@
 }
 
 .project-card:hover {
-  box-shadow: 0 20px 40px rgba(17, 34, 64, 0.1);
+  box-shadow: 0 20px 40px var(--shadow);
   border-color: var(--accent-blue);
 }
 
@@ -54,10 +54,10 @@
 
 .project-icon {
   color: var(--accent-blue);
-  background: rgba(17, 34, 64, 0.05);
+  background: var(--tint);
   padding: 1.5rem;
   border-radius: 50%;
-  border: 2px solid rgba(17, 34, 64, 0.14);
+  border: 2px solid var(--tint-border);
   position: relative;
   z-index: 2;
 }

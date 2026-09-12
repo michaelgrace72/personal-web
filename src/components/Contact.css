@@ -51,16 +51,16 @@
 }
 
 .contact-method:hover {
-  background: rgba(17, 34, 64, 0.04);
+  background: var(--tint);
   border-color: var(--accent-blue);
 }
 
 .method-icon {
   color: var(--accent-blue);
-  background: rgba(17, 34, 64, 0.05);
+  background: var(--tint);
   padding: 0.75rem;
   border-radius: 10px;
-  border: 1px solid rgba(17, 34, 64, 0.14);
+  border: 1px solid var(--tint-border);
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -157,12 +157,12 @@
 }
 
 .availability-type {
-  background: rgba(17, 34, 64, 0.05);
+  background: var(--tint);
   color: var(--accent-blue);
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
   font-size: 0.8rem;
-  border: 1px solid rgba(17, 34, 64, 0.14);
+  border: 1px solid var(--tint-border);
 }
 
 .contact-form {
@@ -207,7 +207,7 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent-blue);
-  box-shadow: 0 0 0 2px rgba(17, 34, 64, 0.14);
+  box-shadow: 0 0 0 2px var(--tint-border);
 }
 
 .form-group input::placeholder,

@@ -18,10 +18,18 @@
   --border: #e3e6ea;
   --section-rule: var(--border);
 
+  --tint: rgba(17, 34, 64, 0.05);         /* icon chips, hover washes */
+  --tint-strong: rgba(17, 34, 64, 0.09);
+  --tint-border: rgba(17, 34, 64, 0.14);
+  --shadow: rgba(17, 34, 64, 0.09);       /* cards */
+  --shadow-strong: rgba(17, 34, 64, 0.25);/* modal */
+  --header-bg: rgba(255, 255, 255, 0.92);
+
   --accent-blue: var(--navy);
   --accent-orange: var(--orange);
   --on-accent: #ffffff;        /* text sitting on a navy or orange fill */
 
+  color-scheme: light;
   color: var(--text-primary);
   background-color: var(--background);
 
@@ -29,6 +37,33 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark theme. index.html resolves data-theme before first paint, so there is
+   no light flash and no second copy of these values in a media query. */
+:root[data-theme="dark"] {
+  --background: #0b1220;
+  --background-alt: #0f1829;
+  --surface: #121c2e;
+  --surface-alt: #1a2740;
+
+  --text-primary: #e8ecf2;
+  --text-secondary: #9fadc0;
+
+  --border: #22304a;
+
+  --tint: rgba(255, 255, 255, 0.05);
+  --tint-strong: rgba(255, 255, 255, 0.09);
+  --tint-border: rgba(255, 255, 255, 0.14);
+  --shadow: rgba(0, 0, 0, 0.45);
+  --shadow-strong: rgba(0, 0, 0, 0.7);
+  --header-bg: rgba(11, 18, 32, 0.92);
+
+  /* navy is unreadable on a navy ground — the accent lightens instead */
+  --accent-blue: #7fa8dd;
+  --on-accent: #0b1220;
+
+  color-scheme: dark;
 }
 
 * {

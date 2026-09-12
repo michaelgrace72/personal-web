@@ -175,7 +175,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(17, 34, 64, 0.14);
+  box-shadow: 0 4px 15px var(--shadow);
 }
 
 .scroll-to-top:hover {
